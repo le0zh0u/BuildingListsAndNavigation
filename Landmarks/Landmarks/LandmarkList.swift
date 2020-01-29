@@ -14,7 +14,7 @@ struct LandmarkList: View {
         NavigationView {
             List(landmarkData) { landmark in
                 // wrap the returned row in a NavigationLink, set LandmarkDetail view as the destination
-                NavigationLink(destination: LandmarkDetail()){
+                NavigationLink(destination: LandmarkDetail(landmark: landmark)){
                     LandmarkRow(landmark: landmark)
                 }
             }
