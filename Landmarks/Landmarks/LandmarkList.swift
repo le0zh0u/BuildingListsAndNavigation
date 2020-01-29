@@ -10,9 +10,16 @@ import SwiftUI
 
 struct LandmarkList: View {
     var body: some View {
-        // Lists work with identifiable data
-        List(landmarkData) { landmark in
-            LandmarkRow(landmark: landmark)
+        // embed the dynamically generated list of landmark in a NavigationView
+        NavigationView {
+            List(landmarkData) { landmark in
+                // wrap the returned row in a NavigationLink, set LandmarkDetail view as the destination
+                NavigationLink(destination: LandmarkDetail()){
+                    LandmarkRow(landmark: landmark)
+                }
+            }
+                // set the title of navigation bar when displaying the list
+            .navigationBarTitle(Text("Landmarks"))
         }
     }
 }

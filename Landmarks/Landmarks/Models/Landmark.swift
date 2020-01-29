@@ -8,6 +8,7 @@ The model for an individual landmark.
 import SwiftUI
 import CoreLocation
 
+// Lists work with identifiable data by Identifiable
 struct Landmark: Hashable, Codable, Identifiable {
     var id: Int
     var name: String
